@@ -10,14 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_21_185459) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_21_190300) do
   create_table "internet_speeds", charset: "utf8mb4", force: :cascade do |t|
-    t.bigint "place_id", null: false
-    t.decimal "download_speed", precision: 15, scale: 2, null: false
-    t.string "download_units", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["place_id"], name: "index_internet_speeds_on_place_id"
   end
 
   create_table "places", charset: "utf8mb4", force: :cascade do |t|
@@ -28,5 +24,4 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_21_185459) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "internet_speeds", "places"
 end
